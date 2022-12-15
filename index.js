@@ -9,6 +9,10 @@ app.get('/product', function(req, res){
     res.sendFile(__dirname + '/Product.html')
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/Error.html')
+})
+
 app.listen(3000, () => {
     console.log("start server at Port 3000")
 })
