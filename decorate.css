@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+* a{
+    text-decoration: none;
+}
+* li{
+    list-style: none;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.bg::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg.webp);
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(45%);
+}
+.menu{
+    position: relative;
+    width: 85%;
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 2rem;
+    color: #fff;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+}
+.menu ul li{
+    padding: 0 50px;
+}
+.menu ul li a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Content */
+
+.content{
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+.content .header,.grid-card{
+    width: 50%;
+    position: relative;
+}
+.content .header{
+    margin-top: 180px;
+    margin-right: 20px;
+    color: #fff;
+}
+.content .header h3{
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+}
+.content .header h3 i{
+    color: orange;
+}
+.content .header h1{
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family:'Courier New', Courier, monospace;
+
+}
+.content .header p{
+    opacity: .5;
+    font-family:'Courier New', Courier, monospace;
+}
+.grid-card{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+}
+.grid-card .box{
+    width: 100%;
+    height: 230px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+    transition: .4s ;
+    position: relative;
+    
+}
+.bg1{
+    background-image:url(https://sparkcdnwus2.azureedge.net/sparkimageassets/XPDC2RH70K22MN-08afd558-a61c-4a63-9171-d3f199738e9f) ;
+}
+.bg2{
+    background-image:url(data:image/png;base64,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) ;
+}
+.bg3{
+    background-image:url(https://cdn-icons-png.flaticon.com/512/124/124038.png) ;
+}
+.bg4{
+    background-image:url(http://store-images.s-microsoft.com/image/apps.37596.9007199266243461.0dd0004f-8d6b-46f1-9755-2b560130fb71.fed87ed8-be2d-4ebe-b68b-7ad310de332f) ;
+}
+.content .box h2{
+    position: absolute;
+    bottom: 7px;
+    left: 15px;
+    color: #fff;
+    padding-left: 5%;
+    padding-bottom: 2%;
+}
+.content .box:hover{
+    transform: translateY(-15px);  
+}
